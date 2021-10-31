@@ -8,7 +8,6 @@
 
 - [Android - Adding at least one Activity with an ACTION-VIEW intent-filter after Updating SDK version 23](https://stackoverflow.com/questions/34367875/android-adding-at-least-one-activity-with-an-action-view-intent-filter-after-u)
 
-
 - [Android permission doesn't work even if I have declared it](https://stackoverflow.com/questions/32635704/android-permission-doesnt-work-even-if-i-have-declared-it)
 
 > java.lang.SecurityException: Sending SMS message: uid 10394 does not have android.permission.SEND_SMS
@@ -138,5 +137,8 @@ $ adb -s 78737bdf forward tcp:7000 tcp:7000
 # now it works
 $ curl -X GET localhost:7000 | jq
 $ curl -X POST localhost:7000 -d "{ message : 'hello' }" | jq
-$ curl -s -X POST http://localhost:7000/sms -d '{ "from": "+351936202288", "to": "+351936202288", "message": "hello kapa" }'
+$ IP="192.168.1.195"
+$ IP="95.95.83.179"
+$ IP="87.196.80.50"
+$ curl -s -X POST "http://${IP}:7000/sms" -d '{ "from": "+351936202288", "to": "+351936202288", "message": "hello kapa" }'
 ```
